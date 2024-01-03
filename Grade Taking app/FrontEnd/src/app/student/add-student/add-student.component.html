@@ -1,0 +1,33 @@
+<div class="container">
+  <form (ngSubmit)="insertData()" [formGroup]="form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" [ngClass]="{ 'is-invalid':submitted && f.name.errors }" class="form-control" placeholder="Enter name">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="studentID">StudentID</label>
+        <input type="number"  formControlName="studentID" [ngClass]="{ 'is-invalid':submitted && f.studentID.errors }" class="form-control" placeholder="Enter studentID">
+        <div *ngIf="submitted && f.studentID.errors" class="invalid-feedback">
+          <div *ngIf="f.studentID.errors.required">StudentID is required</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="grade">Grade</label>
+        <input type="number" formControlName="grade" [ngClass]="{ 'is-invalid':submitted && f.grade.errors }" class="form-control" placeholder="Enter grade">
+        <div *ngIf="submitted && f.grade.errors" class="invalid-feedback">
+          <div *ngIf="f.grade.errors.required">Grade is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="button btn-success mt-4">Submit</button>
+
+      </div>
+  </form>
+</div>
